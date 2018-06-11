@@ -1,11 +1,16 @@
 # PayPal IPN
 
-Usage
+## Usage
+
+```html
 require 'paypal.php';
 $paypal_sandbox = true;
 $paypal = new paypal($paypal_sandbox);
+```
 
-PayPal Form
+## PayPal Form
+
+```html
 $columns = array(
  'business' => '#Business Email#',
  'item_name' => '#Item Name#',
@@ -21,7 +26,10 @@ foreach ($columns as $k => $v) {
  $paypal->add_field($k, $v);
 }
 echo $paypal->submit_form();
+```
 
+## IPN Validate
 
-IPN Validate
+```html
 $paypal->validate_ipn();
+```
